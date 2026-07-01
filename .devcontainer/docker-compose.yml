@@ -1,1 +1,13 @@
-
+services:
+app:
+image: mcr.microsoft.com/devcontainers/base:ubuntu
+volumes:
+- ..:/workspace:cached
+command: sleep infinity
+db:
+image: mcr.microsoft.com/mssql/server:2025-latest
+environment:
+ACCEPT_EULA: "Y"
+MSSQL_SA_PASSWORD: "TuClave_Fuerte123"
+ports:
+- "1433:1433"
